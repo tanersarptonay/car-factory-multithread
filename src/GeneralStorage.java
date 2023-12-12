@@ -35,18 +35,18 @@ public class GeneralStorage {
     }
 
     public static void emptyStorage() {
-        engineStorage.lock.lock();
-        wheelStorage.lock.lock();
-        glassStorage.lock.lock();
         try {
+            engineStorage.lock.lock();
             while (engineStorage.partsNumber != engineStorage.CAPACITY) {
                 engineStorage.full.await();
             }
-
+            
+            wheelStorage.lock.lock();
             while (wheelStorage.partsNumber != wheelStorage.CAPACITY) {
                 wheelStorage.full.await();
             }
 
+            glassStorage.lock.lock();
             while (glassStorage.partsNumber != glassStorage.CAPACITY) {
                 glassStorage.full.await();
             }
