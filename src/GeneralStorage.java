@@ -1,6 +1,5 @@
 public class GeneralStorage {
     private static final int ENGINE_CAPACITY = 1;
-    private static final int test= 0;
     private static final int WHEEL_CAPACITY = 4;
     private static final int GLASS_CAPACITY = 6;
 
